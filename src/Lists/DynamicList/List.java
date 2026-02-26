@@ -1,4 +1,4 @@
-package Lists;
+package Lists.DynamicList;
 
 public interface List<E> {
 
@@ -6,6 +6,6 @@ public interface List<E> {
     boolean isEmpty();
     E get(int index) throws IndexOutOfBoundsException;
     E set(int index, E element) throws IndexOutOfBoundsException;
-    void add(int index, Object element) throws IndexOutOfBoundsException;
+    void add(int index, E element) throws IndexOutOfBoundsException;
     E remove(int index) throws IndexOutOfBoundsException;
 }

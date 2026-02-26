@@ -1,5 +1,5 @@
-import Lists.DynamicListArray;
-import Lists.List;
+import Lists.DynamicList.DynamicListArray;
+import Lists.DynamicList.List;
 
 public class Main {
 

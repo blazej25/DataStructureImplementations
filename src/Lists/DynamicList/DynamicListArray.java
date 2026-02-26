@@ -1,4 +1,4 @@
-package Lists;
+package Lists.DynamicList;
 
 public class DynamicListArray<E> implements List<E> {
     
@@ -36,7 +36,7 @@ public class DynamicListArray<E> implements List<E> {
     }
 
     @Override
-    public void add(int index, Object element) throws IndexOutOfBoundsException {
+    public void add(int index, E element) throws IndexOutOfBoundsException {
         if (index < 0 || index > length) throw new IndexOutOfBoundsException();
         length++;
 
