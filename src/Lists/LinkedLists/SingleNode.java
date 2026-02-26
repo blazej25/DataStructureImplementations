@@ -1,5 +1,7 @@
 package Lists.LinkedLists;
 
+import java.util.Objects;
+
 public class SingleNode<E> {
 
     private E value;
@@ -24,5 +26,13 @@ public class SingleNode<E> {
 
     public void setNext(SingleNode<E> next) {
         this.next = next;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+
+        SingleNode<?> that = (SingleNode<?>) o;
+        return Objects.equals(getValue(), that.getValue()) && Objects.equals(getNext(), that.getNext());
     }
 }
