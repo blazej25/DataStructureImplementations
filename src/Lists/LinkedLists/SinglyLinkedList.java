@@ -1,5 +1,7 @@
 package Lists.LinkedLists;
 
+import CustomExceptions.EmptyListException;
+
 public class SinglyLinkedList<E> implements LinkedList<E>{
 
     SingleNode<E> head;
@@ -23,15 +25,15 @@ public class SinglyLinkedList<E> implements LinkedList<E>{
     }
 
     @Override
-    public E first() {
-        if (this.isEmpty()) return null;
+    public E first() throws EmptyListException {
+        if (this.isEmpty()) throw new EmptyListException();
 
         return head.getValue();
     }
 
     @Override
-    public E last() {
-        if (this.isEmpty()) return null;
+    public E last() throws EmptyListException {
+        if (this.isEmpty()) throw new EmptyListException();
 
         return tail.getValue();
     }
@@ -56,8 +58,8 @@ public class SinglyLinkedList<E> implements LinkedList<E>{
     }
 
     @Override
-    public E removeFirst() {
-        if (this.isEmpty()) return null;
+    public E removeFirst() throws EmptyListException {
+        if (this.isEmpty()) throw new EmptyListException();
         E value = this.head.getValue();
         this.head = this.head.getNext();
         this.size--;
@@ -66,8 +68,8 @@ public class SinglyLinkedList<E> implements LinkedList<E>{
     }
 
     @Override
-    public E removeLast() {
-        if (this.isEmpty()) return null;
+    public E removeLast() throws EmptyListException {
+        if (this.isEmpty()) throw new EmptyListException();
         E value = this.tail.getValue();
         SingleNode<E> newTail = head;
 
