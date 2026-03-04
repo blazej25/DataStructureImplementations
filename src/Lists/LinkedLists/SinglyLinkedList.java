@@ -55,6 +55,7 @@ public class SinglyLinkedList<E> implements LinkedList<E>{
 
         this.tail.setNext(new SingleNode<>(element, null));
         this.tail = this.tail.getNext();
+        size++;
     }
 
     @Override
@@ -70,6 +71,9 @@ public class SinglyLinkedList<E> implements LinkedList<E>{
     @Override
     public E removeLast() throws EmptyListException {
         if (this.isEmpty()) throw new EmptyListException();
+
+        if (size == 1) return removeFirst();
+
         E value = this.tail.getValue();
         SingleNode<E> newTail = head;
 
@@ -80,6 +84,7 @@ public class SinglyLinkedList<E> implements LinkedList<E>{
         newTail.setNext(null);
         this.tail = newTail;
 
+        size--;
         return value;
     }
 }

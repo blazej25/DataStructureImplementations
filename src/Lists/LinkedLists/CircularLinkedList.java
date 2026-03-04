@@ -14,7 +14,7 @@ public class CircularLinkedList<E> implements LinkedList<E>{
 
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     @Override
@@ -88,6 +88,7 @@ public class CircularLinkedList<E> implements LinkedList<E>{
 
         previous.setNext(tail.getNext());
         tail = previous;
+        size--;
         return value;
     }
 }
