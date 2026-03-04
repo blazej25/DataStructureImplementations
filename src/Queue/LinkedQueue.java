@@ -22,8 +22,7 @@ public class LinkedQueue<E> implements Queue<E>{
         return list.isEmpty();
     }
 
-    @Override
-    public E peak() throws EmptyListException {
+    public E peek() throws EmptyListException {
         return list.first();
     }
 

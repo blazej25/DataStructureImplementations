@@ -1,15 +1,23 @@
+import CustomExceptions.EmptyListException;
+import Heap.*;
 import Lists.DynamicList.DynamicListArray;
 import Lists.DynamicList.List;
 
 public class Main {
 
-    static void main() {
-        List<Integer> list = new DynamicListArray<>();
+    static void main() throws EmptyListException {
+        Heap<Integer> heap = new ListHeap<Integer>();
 
-        list.add(0, 4);
-        list.add(0, 5);
-        list.add(1, 6);
-        list.set(1, 8);
-        System.out.println(list);
+        heap.add(5);
+        heap.add(1);
+        heap.add(2);
+
+        System.out.println(heap.first());
+        System.out.println(heap.first());
+        heap.add(4);
+        System.out.println(heap.first());
+        heap.add(7);
+        System.out.println(heap.first());
+        System.out.println(heap.first());
     }
 }

@@ -69,7 +69,7 @@ public class DynamicListArray<E> implements List<E> {
         for (int i = index; i < length - 1; i++) {
             elements[i] = elements[i+1];
         }
-        elements[length] = null;
+
         length--;
 
         return holder;

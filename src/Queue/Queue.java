@@ -6,7 +6,7 @@ public interface Queue<E> {
 
     int size();
     boolean isEmpty();
-    E peak() throws EmptyListException;
+    E peek() throws EmptyListException;
     E dequeue() throws EmptyListException;
     void enqueue(E element);
 }
