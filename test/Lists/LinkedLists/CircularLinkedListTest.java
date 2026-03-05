@@ -1,5 +1,7 @@
 package Lists.LinkedLists;
 
+import Lists.LinkedLists.Resources.LinkedList;
+
 public class CircularLinkedListTest extends LinkedListTest{
 
     @Override

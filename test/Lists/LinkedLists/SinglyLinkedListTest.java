@@ -1,6 +1,6 @@
 package Lists.LinkedLists;
 
-import org.junit.jupiter.api.Test;
+import Lists.LinkedLists.Resources.LinkedList;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

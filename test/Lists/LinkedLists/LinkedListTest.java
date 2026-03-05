@@ -1,6 +1,7 @@
 package Lists.LinkedLists;
 
 import CustomExceptions.EmptyListException;
+import Lists.LinkedLists.Resources.LinkedList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

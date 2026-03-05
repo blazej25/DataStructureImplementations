@@ -1,8 +1,10 @@
 package Lists.LinkedLists;
 
 import CustomExceptions.EmptyListException;
+import Lists.LinkedLists.Resources.LinkedList;
+import Lists.LinkedLists.Resources.SingleNode;
 
-public class CircularLinkedList<E> implements LinkedList<E>{
+public class CircularLinkedList<E> implements LinkedList<E> {
 
     int size;
     SingleNode<E> tail;

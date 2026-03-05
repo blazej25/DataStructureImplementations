@@ -1,8 +1,10 @@
 package Lists.LinkedLists;
 
 import CustomExceptions.EmptyListException;
+import Lists.LinkedLists.Resources.LinkedList;
+import Lists.LinkedLists.Resources.SingleNode;
 
-public class SinglyLinkedList<E> implements LinkedList<E>{
+public class SinglyLinkedList<E> implements LinkedList<E> {
 
     SingleNode<E> head;
     SingleNode<E> tail;

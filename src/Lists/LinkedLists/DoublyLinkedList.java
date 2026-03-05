@@ -1,8 +1,10 @@
 package Lists.LinkedLists;
 
 import CustomExceptions.EmptyListException;
+import Lists.LinkedLists.Resources.DoubleNode;
+import Lists.LinkedLists.Resources.LinkedList;
 
-public class DoublyLinkedList<E> implements LinkedList<E>{
+public class DoublyLinkedList<E> implements LinkedList<E> {
 
     private DoubleNode<E> head;
     private DoubleNode<E> tail;

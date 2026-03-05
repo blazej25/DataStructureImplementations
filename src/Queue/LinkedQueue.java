@@ -1,7 +1,7 @@
 package Queue;
 
 import CustomExceptions.EmptyListException;
-import Lists.LinkedLists.LinkedList;
+import Lists.LinkedLists.Resources.LinkedList;
 import Lists.LinkedLists.SinglyLinkedList;
 
 public class LinkedQueue<E> implements Queue<E>{

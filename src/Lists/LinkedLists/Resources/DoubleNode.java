@@ -1,4 +1,4 @@
-package Lists.LinkedLists;
+package Lists.LinkedLists.Resources;
 
 public class DoubleNode<E> {
 
