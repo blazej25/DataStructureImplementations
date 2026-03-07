@@ -15,6 +15,10 @@ public class ListHeap<E extends Comparable<E>> implements Heap<E> {
         list = new DynamicListArray<>();
     }
 
+    public ListHeap(List<E> list) {
+        this.list = heapify(list);
+    }
+
     @Override
     public int size() {
         return list.size();
@@ -49,10 +53,10 @@ public class ListHeap<E extends Comparable<E>> implements Heap<E> {
         if (isEmpty()) {
             list.add(0, element);
         } else {
-            list.add(list.size() - 1, element);
+            list.add(list.size(), element);
         }
 
-        heapify();
+        bubbleUp();
     }
 
     private void bubbleDown(int index) {
@@ -88,15 +92,32 @@ public class ListHeap<E extends Comparable<E>> implements Heap<E> {
         }
     }
 
-    private void heapify() {
-        for (int i = list.size() - 1; i > 0; i--) {
+    private List<E> heapify(List<E> arr) {
+        for (int i = arr.size() - 1; i > 0; i--) {
             int parent = (i - 1) / 2;
 
-            if (list.get(parent).compareTo(list.get(i)) < 0) continue;
+            if (arr.get(parent).compareTo(arr.get(i)) < 0) continue;
+
+            E hold = arr.get(parent);
+            arr.set(parent, arr.get(i));
+            arr.set(i, hold);
+        }
+
+        return arr;
+    }
+
+    private void bubbleUp() {
+        int index = list.size() - 1;
+
+        while (index > 0) {
+            int parent = (index - 1) / 2;
+
+            if (list.get(parent).compareTo(list.get(index)) < 0) return;
 
             E hold = list.get(parent);
-            list.set(parent, list.get(i));
-            list.set(i, hold);
+            list.set(parent, list.get(index));
+            list.set(index, hold);
+            index = parent;
         }
     }
 }
