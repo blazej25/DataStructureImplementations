@@ -4,22 +4,24 @@ import java.util.Objects;
 
 public class BinaryTree<E> {
 
-    private E root;
+    private E value;
     private BinaryTree<E> left;
     private BinaryTree<E> right;
 
-    public BinaryTree(E root, BinaryTree<E> left, BinaryTree<E> right) {
-        this.root = root;
+    public BinaryTree() {}
+
+    public BinaryTree(E value, BinaryTree<E> left, BinaryTree<E> right) {
+        this.value = value;
         this.left = left;
         this.right = right;
     }
 
-    public E getRoot() {
-        return root;
+    public E getValue() {
+        return value;
     }
 
-    public void setRoot(E root) {
-        this.root = root;
+    public void setValue(E value) {
+        this.value = value;
     }
 
     public BinaryTree<E> getLeft() {
@@ -43,6 +45,6 @@ public class BinaryTree<E> {
         if (o == null || getClass() != o.getClass()) return false;
 
         BinaryTree<?> that = (BinaryTree<?>) o;
-        return Objects.equals(getRoot(), that.getRoot()) && Objects.equals(getLeft(), that.getLeft()) && Objects.equals(getRight(), that.getRight());
+        return Objects.equals(getValue(), that.getValue()) && Objects.equals(getLeft(), that.getLeft()) && Objects.equals(getRight(), that.getRight());
     }
 }
