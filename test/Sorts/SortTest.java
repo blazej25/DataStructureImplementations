@@ -20,7 +20,8 @@ class SortTest {
         return Stream.of(
                 Sort::insertionSort,
                 Sort::selectionSort,
-                Sort::heapSort
+                Sort::heapSort,
+                Sort::mergeSort
         );
     }
 

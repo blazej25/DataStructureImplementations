@@ -79,4 +79,32 @@ public class Sort {
         arr[index] = hold;
         bubbleDown(arr, max, last);
     }
+
+    public static void mergeSort(int[] arr) {
+        if (arr.length <= 1) return;
+
+        int[] left = new int[arr.length/2];
+        int[] right = new int[arr.length - left.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            if (i < left.length) {
+                left[i] = arr[i];
+            } else {
+                right[i - left.length] = arr[i];
+            }
+        }
+
+        mergeSort(left);
+        mergeSort(right);
+        int i = 0;
+        int j = 0;
+
+        while (i < left.length || j < right.length) {
+            if (j == right.length || (i < left.length && left[i] < right[j])) {
+                arr[i+j] = left[i++];
+            } else {
+                arr[i+j] = right[j++];
+            }
+        }
+    }
 }
