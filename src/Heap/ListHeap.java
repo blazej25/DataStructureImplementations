@@ -101,6 +101,7 @@ public class ListHeap<E extends Comparable<E>> implements Heap<E> {
             E hold = arr.get(parent);
             arr.set(parent, arr.get(i));
             arr.set(i, hold);
+            bubbleDown(i);
         }
 
         return arr;

@@ -36,6 +36,47 @@ public class Sort {
     }
 
     public static void heapSort(int[] arr) {
-        //Heap<Integer> heap = new ListHeap<Integer>(List.listOf(arr));
+        heapify(arr);
+
+        for (int i = arr.length-1; i > 0; i--) {
+            int hold = arr[i];
+            arr[i] = arr[0];
+            arr[0] = hold;
+            bubbleDown(arr, 0, i);
+        }
+    }
+
+    private static void heapify(int[] arr) {
+        for (int i = arr.length - 1; i > 0; i--) {
+             int parent = (i - 1) / 2;
+
+             if (arr[parent] > arr[i]) continue;
+
+             int hold = arr[i];
+             arr[i] = arr[parent];
+             arr[parent] = hold;
+             bubbleDown(arr, i, arr.length);
+        }
+    }
+
+    private static void bubbleDown(int[] arr, int index, int last) {
+        int left = (index * 2) + 1;
+        int right = (index * 2) + 2;
+        int max = index;
+
+        if (left < last && arr[left] > arr[max]) {
+            max = left;
+        }
+
+        if (right < last && arr[right] > arr[max]) {
+            max = right;
+        }
+
+        if (max == index) return;
+
+        int hold = arr[max];
+        arr[max] = arr[index];
+        arr[index] = hold;
+        bubbleDown(arr, max, last);
     }
 }

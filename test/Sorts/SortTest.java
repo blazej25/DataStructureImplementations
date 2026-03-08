@@ -19,7 +19,8 @@ class SortTest {
     static Stream<SortAlgorithm> algorithms() {
         return Stream.of(
                 Sort::insertionSort,
-                Sort::selectionSort
+                Sort::selectionSort,
+                Sort::heapSort
         );
     }
 
