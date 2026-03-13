@@ -21,7 +21,8 @@ class SortTest {
                 Sort::insertionSort,
                 Sort::selectionSort,
                 Sort::heapSort,
-                Sort::mergeSort
+                Sort::mergeSort,
+                Sort::quickSort
         );
     }
 

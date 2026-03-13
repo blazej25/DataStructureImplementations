@@ -1,7 +1,6 @@
 package Sorts;
 
 import Heap.*;
-import Lists.DynamicList.List;
 
 public class Sort {
 
@@ -28,9 +27,7 @@ public class Sort {
             }
 
             if (min != i) {
-                int hold = arr[i];
-                arr[i] = arr[min];
-                arr[min] = hold;
+                swap(arr, i, min);
             }
         }
     }
@@ -74,9 +71,7 @@ public class Sort {
 
         if (max == index) return;
 
-        int hold = arr[max];
-        arr[max] = arr[index];
-        arr[index] = hold;
+        swap(arr, max, index);
         bubbleDown(arr, max, last);
     }
 
@@ -106,5 +101,35 @@ public class Sort {
                 arr[i+j] = right[j++];
             }
         }
+    }
+
+    public static void quickSort(int[] arr) {
+        quickSortHelp(arr, 0, arr.length-1);
+    }
+
+    private static void quickSortHelp(int[] arr, int start, int end) {
+        if (start >= end) return;
+
+        int pivot = (int) (start + (end - start + 1) * Math.random());
+        swap(arr, pivot, end);
+
+        int i = start;
+
+        for (int j = start; j < end; j++) {
+            if (arr[j] < arr[end]) {
+                swap(arr, j, i);
+                i++;
+            }
+        }
+
+        swap(arr, i, end);
+        quickSortHelp(arr, start, i-1);
+        quickSortHelp(arr, i+1, end);
+    }
+
+    private static void swap (int[] arr, int i1, int i2) {
+        int hold = arr[i1];
+        arr[i1] = arr[i2];
+        arr[i2] = hold;
     }
 }

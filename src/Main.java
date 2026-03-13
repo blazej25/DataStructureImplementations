@@ -2,21 +2,12 @@ import CustomExceptions.EmptyListException;
 import Heap.*;
 import Lists.DynamicList.DynamicListArray;
 import Lists.DynamicList.List;
+import Sorts.Sort;
 
 public class Main {
 
     static void main() throws EmptyListException {
-        List<Integer> list = new DynamicListArray<>();
-        list.add(0, 4);
-        list.add(list.size(), 1);
-        list.add(list.size(), 9);
-        list.add(list.size(), 0);
-
-        Heap<Integer> heap = new ListHeap<Integer>(list);
-
-        System.out.println(heap.first());
-        System.out.println(heap.first());
-        System.out.println(heap.first());
-        System.out.println(heap.first());
+        int[] arr = new int[]{6, 1, 0, 5, 6, 7};
+        Sort.quickSort(arr);
     }
 }
